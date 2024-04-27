@@ -1,14 +1,14 @@
+import { Link } from "react-router-dom";
+
 const Spot = ({ spot }) => {
   const {
+    _id,
     image,
     tourist_spot_name,
     country_name,
     location,
     short_description,
     average_cost,
-    seasonality,
-    travel_time,
-    totalVisitorsPerYear,
   } = spot;
   return (
     <div className="card bg-base-100 border border-rounded p-3">
@@ -27,9 +27,11 @@ const Spot = ({ spot }) => {
         </div>
 
         <div className="card-actions mt-auto w-full">
-          <button className="btn bg-violet-950 text-white hover:text-black mt-auto w-full">
-            View Details
-          </button>
+          <Link to={`details/${_id}`} className="w-full">
+            <button className="btn bg-violet-950 text-white hover:text-black mt-auto w-full">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
