@@ -1,9 +1,6 @@
-import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 
 const Details = () => {
-  const { user } = useContext(AuthContext);
   const tourists = useLoaderData();
   console.log(tourists);
 
@@ -50,16 +47,10 @@ const Details = () => {
               Total Visitors Per Year : {totalVisitorsPerYear}
             </p>
             <p className="text-xl font-semibold">Seasonality : {seasonality}</p>
-            <div className="mt-5">
-              <p className="text-xl font-semibold">
-                Name : {user?.displayName}
-              </p>
-              <p className="text-xl font-semibold">Email : {user?.email}</p>
-            </div>
 
-            <button className="btn bg-green-950 px-6 rounded-xl hover:text-black text-white w-40 text-xl font-semibold">
+            {/* <button className="btn bg-green-950 px-6 rounded-xl hover:text-black text-white w-40 text-xl font-semibold">
               Add
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
