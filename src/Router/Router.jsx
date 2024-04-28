@@ -10,8 +10,6 @@ import PrivateRoute from "./PrivateRoute";
 import MyList from "../component/MyList/MyList";
 import Update from "../component/Update/Update";
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,15 +51,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/myLists/:email",
-        element: <MyList></MyList>,
-        loader : () => fetch("http://localhost:5001/tourists")
-        
+        element: (
+          <PrivateRoute>
+            <MyList></MyList>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5001/tourists"),
       },
       {
-        path : '/update/:id',
-        element : <Update></Update>,
-        loader : ({params}) => fetch(`http://localhost:5001/tourists/${params.id}`)
-      }
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/tourists/${params.id}`),
+      },
     ],
   },
 ]);

@@ -57,7 +57,7 @@ const Footer = () => {
       <footer className="footer footer-center p-4 bg-green-950 text-base-content">
         <aside>
           <p className="text-white">
-            Copyright © 2024 - All right reserved by ACME Industries Ltd
+            Copyright © 2024 - All right reserved by TravelVista
           </p>
         </aside>
       </footer>
