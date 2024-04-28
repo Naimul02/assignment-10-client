@@ -28,7 +28,7 @@ const Navbar = () => {
         <NavLink to="/addTouristsSpot">Add Tourists Spot</NavLink>
       </li>
       <li className="ml-2">
-        <NavLink to="/">My List</NavLink>
+        <NavLink to={`/myLists/${user?.email}`}>My List</NavLink>
       </li>
     </>
   );

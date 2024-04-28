@@ -1,6 +1,10 @@
+
+import { useContext } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 
 const AddTouristsSpot = () => {
+  const {user} = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -61,6 +65,7 @@ const AddTouristsSpot = () => {
                   placeholder="user name"
                   className="input border border-green-800 w-full "
                   required
+                  defaultValue={user?.displayName}
                   name="name"
                 />
               </div>
@@ -74,6 +79,7 @@ const AddTouristsSpot = () => {
                   className="input border border-green-800 w-full "
                   required
                   name="email"
+                  defaultValue={user?.email}
                 />
               </div>
             </div>
