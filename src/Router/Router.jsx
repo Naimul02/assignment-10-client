@@ -8,6 +8,7 @@ import AddTouristsSpot from "../component/AddTouristsSpot/AddTouristsSpot";
 import AllTouristsSpot from "../component/AllTouristsSpot/AllTouristsSpot";
 import PrivateRoute from "./PrivateRoute";
 import MyList from "../component/MyList/MyList";
+import Update from "../component/Update/Update";
 
 
 
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         loader : () => fetch("http://localhost:5001/tourists")
         
       },
+      {
+        path : '/update/:id',
+        element : <Update></Update>,
+        loader : ({params}) => fetch(`http://localhost:5001/tourists/${params.id}`)
+      }
     ],
   },
 ]);

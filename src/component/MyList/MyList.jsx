@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const MyList = () => {
   const tourists = useLoaderData();
@@ -37,9 +37,11 @@ const MyList = () => {
                   </button>
                 </td>
                 <td>
-                  <button className="btn btn-sm bg-green-600 text-white hover:text-black">
-                    Update
-                  </button>
+                  <Link to={`/update/${tourist._id}`}>
+                    <button className="btn btn-sm bg-green-600 text-white hover:text-black">
+                      Update
+                    </button>
+                  </Link>
                 </td>
               </tr>
             ))}
