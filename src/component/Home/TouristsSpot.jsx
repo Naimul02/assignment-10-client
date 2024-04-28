@@ -5,7 +5,7 @@ import Spot from "./Spot";
 const TouristsSpot = () => {
   const [spots, setSpots] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/tourists")
+    fetch("http://localhost:5001/tourists")
       .then((res) => res.json())
       .then((data) => setSpots(data));
   }, []);
@@ -23,7 +23,7 @@ const TouristsSpot = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
-        {spots?.map((spot) => (
+        {spots?.slice(0, 6).map((spot) => (
           <Spot key={spot._id} spot={spot}></Spot>
         ))}
       </div>

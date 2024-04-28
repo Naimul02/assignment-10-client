@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-const Spot = ({ spot }) => {
+const TouristsCard = ({ spot }) => {
+  console.log(spot);
   const {
     _id,
     image,
@@ -40,4 +41,4 @@ const Spot = ({ spot }) => {
   );
 };
 
-export default Spot;
+export default TouristsCard;

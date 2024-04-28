@@ -5,6 +5,8 @@ import Signup from "../Pages/Signup/Signup";
 import Signin from "../Pages/Signin/Signin";
 import Details from "../component/Details/Details";
 import AddTouristsSpot from "../component/AddTouristsSpot/AddTouristsSpot";
+import AllTouristsSpot from "../component/AllTouristsSpot/AllTouristsSpot";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,12 +27,25 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
-        loader: () => fetch(`http://localhost:5000/tourists`),
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5001/tourists"),
       },
       {
         path: "/addTouristsSpot",
-        element: <AddTouristsSpot></AddTouristsSpot>,
+        element: (
+          <PrivateRoute>
+            <AddTouristsSpot></AddTouristsSpot>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/allTouristsSpot",
+        element: <AllTouristsSpot></AllTouristsSpot>,
+        loader: () => fetch("http://localhost:5001/tourists"),
       },
     ],
   },

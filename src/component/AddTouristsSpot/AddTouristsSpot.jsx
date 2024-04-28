@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 const AddTouristsSpot = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -5,6 +7,7 @@ const AddTouristsSpot = () => {
     const name = form.name.value;
     const email = form.email.value;
     const photo = form.photo.value;
+    const touristSpot = form.touristSpot.value;
     const countryName = form.countryName.value;
     const location = form.location.value;
     const shortDescription = form.shortDescription.value;
@@ -13,18 +16,35 @@ const AddTouristsSpot = () => {
     const travelTime = form.travelTime.value;
     const totalVisitorsPerYear = form.totalVisitorsPerYear.value;
 
-    console.log(
+    const touristsSpotInfo = {
       name,
       email,
-      photo,
-      countryName,
+      image: photo,
+      tourist_spot_name: touristSpot,
+      country_name: countryName,
       location,
-      shortDescription,
-      averageCost,
+      short_description: shortDescription,
+      average_cost: averageCost,
       seasonality,
-      travelTime,
-      totalVisitorsPerYear
-    );
+      travel_time: travelTime,
+      totalVisitorsPerYear,
+    };
+
+    fetch("http://localhost:5001/touristSpot", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(touristsSpotInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          toast.success("Tourist Spot Added Successful");
+          form.reset();
+        }
+      });
   };
   return (
     <div className="hero min-h-screen">
@@ -39,7 +59,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="user name"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="name"
                 />
@@ -51,7 +71,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="email"
                 />
@@ -65,7 +85,7 @@ const AddTouristsSpot = () => {
               <input
                 type="text"
                 placeholder="Photo URL"
-                className="input input-bordered w-full"
+                className="input border border-green-800 w-full "
                 required
                 name="photo"
               />
@@ -78,7 +98,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="Tourist Spot Name"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="touristSpot"
                 />
@@ -90,7 +110,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="country name"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="countryName"
                 />
@@ -105,7 +125,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="Location"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="location"
                 />
@@ -117,7 +137,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="short description"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="shortDescription"
                 />
@@ -132,7 +152,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="Average Cost"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="averageCost"
                 />
@@ -144,7 +164,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="seasonality"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="seasonality"
                 />
@@ -158,7 +178,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="travel time"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="travelTime"
                 />
@@ -170,7 +190,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   placeholder="total visitors per year"
-                  className="input input-bordered w-full"
+                  className="input border border-green-800 w-full "
                   required
                   name="totalVisitorsPerYear"
                 />

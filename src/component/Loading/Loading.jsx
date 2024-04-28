@@ -1,7 +1,7 @@
 const Loading = () => {
   return (
-    <div className="mx-auto my-10">
-      <span className="loading loading-spinner loading-lg"></span>
+    <div className="text-center my-28">
+      <span className="loading loading-spinner loading-lg mx-auto"></span>
     </div>
   );
 };
