@@ -9,11 +9,15 @@ import AllTouristsSpot from "../component/AllTouristsSpot/AllTouristsSpot";
 import PrivateRoute from "./PrivateRoute";
 import MyList from "../component/MyList/MyList";
 import Update from "../component/Update/Update";
+import ErrorElement from "../ErrorElement/ErrorElement";
+import CountryCategories from "../component/Home/Countries/CountryCategories";
+import CountryDetails from "../component/Home/Countries/CountryDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
@@ -35,6 +39,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:5001/tourists"),
+      },
+      {
+        path: "/countriesDetails/:id",
+        element: (
+          <PrivateRoute>
+            <CountryDetails></CountryDetails>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5001/countriesDetails"),
       },
       {
         path: "/addTouristsSpot",
@@ -67,6 +80,14 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5001/tourists/${params.id}`),
+      },
+      {
+        path: "/countriesCategories/:country_name",
+        element: <CountryCategories></CountryCategories>,
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5001/countriesCategories/${params.country_name}`
+          ),
       },
     ],
   },

@@ -1,14 +1,25 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import Spot from "./Spot";
+import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
+import Loading from "../Loading/Loading";
 
 const TouristsSpot = () => {
+  const { loading, setLoading } = useContext(AuthContext);
   const [spots, setSpots] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:5001/tourists")
       .then((res) => res.json())
-      .then((data) => setSpots(data));
+      .then((data) => {
+        setSpots(data);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div className="my-20">

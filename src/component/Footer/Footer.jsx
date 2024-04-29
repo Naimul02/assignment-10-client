@@ -14,6 +14,14 @@ const Footer = () => {
             Providing reliable tech since 2007
           </p>
         </aside>
+        <div>
+          <h2 className="text-xl text-white mb-4">Contact Us</h2>
+          <ol className="space-y-2">
+            <li className="text-lg">Naimul Islum</li>
+            <li className="text-lg">Number : 0181766****</li>
+            <li className="text-lg">Email : naimulislum39@gmail.com</li>
+          </ol>
+        </div>
         <nav>
           <h6 className="footer-title">Social</h6>
           <div className="grid grid-flow-col gap-4">

@@ -1,10 +1,9 @@
-
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
 
 const AddTouristsSpot = () => {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -46,7 +45,7 @@ const AddTouristsSpot = () => {
         console.log(data);
         if (data.insertedId) {
           toast.success("Tourist Spot Added Successful");
-          form.reset();
+          // form.reset();
         }
       });
   };
