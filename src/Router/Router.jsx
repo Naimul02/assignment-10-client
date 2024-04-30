@@ -39,9 +39,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () =>
-          fetch(
-            "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/tourists"
-          ),
+          fetch("https://assignment-10-server-coral-three.vercel.app/tourists"),
       },
       {
         path: "/countriesDetails/:id",
@@ -52,7 +50,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/countriesDetails"
+            "https://assignment-10-server-coral-three.vercel.app/countriesDetails"
           ),
       },
       {
@@ -67,9 +65,7 @@ const router = createBrowserRouter([
         path: "/allTouristsSpot",
         element: <AllTouristsSpot></AllTouristsSpot>,
         loader: () =>
-          fetch(
-            "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/tourists"
-          ),
+          fetch("https://assignment-10-server-coral-three.vercel.app/tourists"),
       },
       {
         path: "/myLists/:email",
@@ -79,9 +75,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () =>
-          fetch(
-            "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/tourists"
-          ),
+          fetch("https://assignment-10-server-coral-three.vercel.app/tourists"),
       },
       {
         path: "/update/:id",
@@ -92,7 +86,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/tourists/${params.id}`
+            `https://assignment-10-server-coral-three.vercel.app/tourists/${params.id}`
           ),
       },
       {
@@ -100,7 +94,7 @@ const router = createBrowserRouter([
         element: <CountryCategories></CountryCategories>,
         loader: ({ params }) =>
           fetch(
-            `https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/countriesCategories/${params.country_name}`
+            `https://assignment-10-server-coral-three.vercel.app/countriesCategories/${params.country_name}`
           ),
       },
     ],

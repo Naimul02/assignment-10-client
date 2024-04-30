@@ -9,9 +9,7 @@ const TouristsSpot = () => {
   const [spots, setSpots] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/tourists"
-    )
+    fetch("https://assignment-10-server-coral-three.vercel.app/tourists")
       .then((res) => res.json())
       .then((data) => {
         setSpots(data);

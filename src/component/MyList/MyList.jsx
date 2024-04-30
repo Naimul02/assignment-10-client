@@ -22,7 +22,7 @@ const MyList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/touristSpot/${_id}`,
+          `https://assignment-10-server-coral-three.vercel.app/touristSpot/${_id}`,
           {
             method: "DELETE",
             headers: {

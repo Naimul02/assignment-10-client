@@ -9,9 +9,7 @@ const Countries = () => {
   const { loading, setLoading } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(
-      "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/countries"
-    )
+    fetch("https://assignment-10-server-coral-three.vercel.app/countries")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

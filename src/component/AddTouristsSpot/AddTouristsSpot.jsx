@@ -33,16 +33,13 @@ const AddTouristsSpot = () => {
       totalVisitorsPerYear,
     };
 
-    fetch(
-      "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/touristSpot",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(touristsSpotInfo),
-      }
-    )
+    fetch("https://assignment-10-server-coral-three.vercel.app/touristSpot", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(touristsSpotInfo),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

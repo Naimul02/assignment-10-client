@@ -51,7 +51,7 @@ const Update = () => {
     };
 
     fetch(
-      `https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/update/${tourists._id}`,
+      `https://assignment-10-server-coral-three.vercel.app/update/${tourists._id}`,
       {
         method: "PUT",
         headers: {
