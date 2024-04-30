@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const TouristsCard = ({ spot }) => {
-  console.log(spot);
+  // console.log(spot);
   const {
     _id,
     image,
@@ -24,7 +24,7 @@ const TouristsCard = ({ spot }) => {
           </p>
           <div className="flex justify-between">
             <p className="text-lg font-semibold">Travel Time : {travel_time}</p>
-            <p className="text-lg font-semibold">Cost : {average_cost}</p>
+            <p className="text-lg font-semibold">Cost : $ {average_cost}</p>
           </div>
           <p className="text-lg font-semibold">Seasonality : {seasonality}</p>
         </div>

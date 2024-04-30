@@ -21,13 +21,13 @@ const Navbar = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="ml-2">
+      <li className="lg:ml-2">
         <NavLink to="/allTouristsSpot">All Tourists Spot</NavLink>
       </li>
-      <li className="ml-2">
+      <li className="lg:ml-2">
         <NavLink to="/addTouristsSpot">Add Tourists Spot</NavLink>
       </li>
-      <li className="ml-2">
+      <li className="lg:ml-2">
         <NavLink to={`/myLists/${user?.email}`}>My List</NavLink>
       </li>
     </>
@@ -57,6 +57,17 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navLinks}
+            <li>
+              <div className="block lg:hidden">
+                {user ? (
+                  <>
+                    <button onClick={handleLogout}>Logout</button>
+                  </>
+                ) : (
+                  <Link to="/login">Login</Link>
+                )}
+              </div>
+            </li>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">TravelVista</a>
@@ -76,7 +87,7 @@ const Navbar = () => {
             <Tooltip id="my-tooltip" />
           </div>
         </div>
-        <div>
+        <div className="hidden lg:block">
           {user ? (
             <>
               <button

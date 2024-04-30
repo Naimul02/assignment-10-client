@@ -22,13 +22,10 @@ const Details = () => {
   } = touristSpot;
 
   return (
-    <div className="hero md:h-[500px] my-10">
-      <div className="hero-content flex-col lg:flex-row border rounded-xl h-full">
-        <img
-          src={image}
-          className="max-w-[500px] border-2 rounded-lg  h-full"
-        />
-        <div className="">
+    <div className="hero lg:h-[500px] my-10">
+      <div className="flex flex-col items-center lg:flex-row   h-full">
+        <img src={image} className="lg:max-w-[500px] lg:rounded-xl   h-full" />
+        <div className="lg:ml-10 ml-3 lg:mt-0 mt-6">
           <h1 className="text-4xl font-bold">{tourist_spot_name}</h1>
           <div className="space-y-2 mt-6">
             <h3 className="text-xl font-semibold">

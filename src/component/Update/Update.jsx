@@ -60,8 +60,8 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.modifiedCount > 0){
-          toast.success("Information updated successful")
+        if (data.modifiedCount > 0) {
+          toast.success("Information updated successful");
         }
       });
   };
@@ -72,7 +72,7 @@ const Update = () => {
         <div className="hero-content w-full ">
           <div className="card shrink-0 w-full">
             <form className="card-body  w-full" onSubmit={handleUpdate}>
-              <div className="flex gap-3">
+              <div className="flex flex-col md:flex-row gap-3">
                 <div className="form-control  w-full">
                   <label className="label">
                     <span className="label-text">User Name</span>
@@ -114,7 +114,7 @@ const Update = () => {
                   defaultValue={image}
                 />
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-col md:flex-row gap-3">
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Tourist Spot Name</span>
@@ -143,7 +143,7 @@ const Update = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex flex-col md:flex-row gap-3">
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Location</span>
@@ -172,7 +172,7 @@ const Update = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex flex-col md:flex-row gap-3">
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Average Cost</span>
@@ -200,7 +200,7 @@ const Update = () => {
                   />
                 </div>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-col md:flex-row gap-3">
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">Travel Time</span>

@@ -6,7 +6,6 @@ const MyList = () => {
   const tourists = useLoaderData();
   const { email } = useParams();
 
-  
   const filterTourists = tourists.filter((tourist) => tourist.email === email);
   const [touristsData, setTouristsData] = useState(filterTourists);
   console.log(filterTourists);
@@ -30,17 +29,16 @@ const MyList = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data, _id);
+            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Deleted Successful",
                 icon: "success",
               });
-              const remainingTourist = filterTourists.filter(
-                (tourist) => tourist._id !== _id
-              );
+              const remainingTourist = filterTourists?.filter((tourist) => tourist._id !== _id);
               setTouristsData(remainingTourist);
+              location.reload();
             }
           });
       }
