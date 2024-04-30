@@ -12,7 +12,7 @@ const Carousel = () => {
             <p className="md:w-2/3 md:mx-auto text-center text-lg">
               Thailand is a Southeast Asian country.It's known for tropical
               beaches, opulent royal palaces, ancient ruins and ornate temples
-              displaying figures of Buddha
+              displaying figures of Boddha
             </p>
             <button className="bg-orange-400 rounded-2xl btn px-6 border-none">
               Explore More
