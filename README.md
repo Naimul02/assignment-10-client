@@ -1,8 +1,24 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite
 
-Currently, two official plugins are available:
+# Website Name
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>Travel Vista</h2>
+
+# Live website url
+
+https://assignment-10-cbf48.web.app/
+
+# Feature
+<ul>
+  <li>First of all this website has a home page.The homepage has a banner , tourists spots , countries ,navbar ,  customer reviews , team members , and a footer section.</li>
+
+  <li>Clicking on All Tourist Spots in the Navbar will show all the tourist spots available</li>
+
+  <li>Clicking on At Tourist page will bring up a form fill that form you can add a tourist spot</li>
+
+  <li>You can see how many tourist spots you have added by clicking on the My List Page</li>
+
+  <li>On clicking on the login button you will see a login form and after filling the form you can login.</li>
+</ul>

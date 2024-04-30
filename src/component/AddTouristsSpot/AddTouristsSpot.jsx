@@ -34,7 +34,7 @@ const AddTouristsSpot = () => {
     };
 
     fetch(
-      "https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/touristSpot",
+      "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/touristSpot",
       {
         method: "POST",
         headers: {

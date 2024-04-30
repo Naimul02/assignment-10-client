@@ -10,7 +10,7 @@ const TouristsSpot = () => {
 
   useEffect(() => {
     fetch(
-      "https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/tourists"
+      "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/tourists"
     )
       .then((res) => res.json())
       .then((data) => {

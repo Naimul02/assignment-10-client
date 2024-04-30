@@ -10,7 +10,7 @@ const Countries = () => {
 
   useEffect(() => {
     fetch(
-      "https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/countries"
+      "https://assignment-10-server-qi5y4ser0-naimul-islums-projects.vercel.app/countries"
     )
       .then((res) => res.json())
       .then((data) => {
