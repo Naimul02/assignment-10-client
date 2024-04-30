@@ -21,12 +21,15 @@ const MyList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5001/touristSpot/${_id}`, {
-          method: "DELETE",
-          headers: {
-            "content-type": "application/json",
-          },
-        })
+        fetch(
+          `https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/touristSpot/${_id}`,
+          {
+            method: "DELETE",
+            headers: {
+              "content-type": "application/json",
+            },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -36,7 +39,9 @@ const MyList = () => {
                 text: "Deleted Successful",
                 icon: "success",
               });
-              const remainingTourist = filterTourists?.filter((tourist) => tourist._id !== _id);
+              const remainingTourist = filterTourists?.filter(
+                (tourist) => tourist._id !== _id
+              );
               setTouristsData(remainingTourist);
               location.reload();
             }

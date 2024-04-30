@@ -38,7 +38,10 @@ const router = createBrowserRouter([
             <Details></Details>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5001/tourists"),
+        loader: () =>
+          fetch(
+            "https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/tourists"
+          ),
       },
       {
         path: "/countriesDetails/:id",
@@ -47,7 +50,10 @@ const router = createBrowserRouter([
             <CountryDetails></CountryDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5001/countriesDetails"),
+        loader: () =>
+          fetch(
+            "https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/countriesDetails"
+          ),
       },
       {
         path: "/addTouristsSpot",
@@ -60,7 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/allTouristsSpot",
         element: <AllTouristsSpot></AllTouristsSpot>,
-        loader: () => fetch("http://localhost:5001/tourists"),
+        loader: () =>
+          fetch(
+            "https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/tourists"
+          ),
       },
       {
         path: "/myLists/:email",
@@ -69,7 +78,10 @@ const router = createBrowserRouter([
             <MyList></MyList>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5001/tourists"),
+        loader: () =>
+          fetch(
+            "https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/tourists"
+          ),
       },
       {
         path: "/update/:id",
@@ -79,14 +91,16 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/tourists/${params.id}`),
+          fetch(
+            `https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/tourists/${params.id}`
+          ),
       },
       {
         path: "/countriesCategories/:country_name",
         element: <CountryCategories></CountryCategories>,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5001/countriesCategories/${params.country_name}`
+            `https://assignment-10-server-448t7upom-naimul-islums-projects.vercel.app/countriesCategories/${params.country_name}`
           ),
       },
     ],
