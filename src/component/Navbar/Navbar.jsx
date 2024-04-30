@@ -70,7 +70,9 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">TravelVista</a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          TravelVista
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -84,7 +86,7 @@ const Navbar = () => {
             >
               <img src={user?.photoURL} />
             </a>
-            <Tooltip id="my-tooltip" />
+            <Tooltip id="my-tooltip" className="z-10" />
           </div>
         </div>
         <div className="hidden lg:block">
