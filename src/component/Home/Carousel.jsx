@@ -11,8 +11,8 @@ const Carousel = () => {
             <h1 className="text-4xl font-bold">Thailand</h1>
             <p className="md:w-2/3 md:mx-auto text-center text-lg">
               Thailand is a Southeast Asian country.It's known for tropical
-              beaches, opulent royal palaces, ancient ruins and ornate temples
-              displaying figures of Boddha
+              beaches, opulent royal palaces , ancient ruins and ornate temples
+              displaying figures of bodda
             </p>
             <button className="bg-orange-400 rounded-2xl btn px-6 border-none">
               Explore More
@@ -37,7 +37,7 @@ const Carousel = () => {
           <div className="text-center space-y-3 text-white">
             <h1 className="text-4xl font-bold">Malaysia</h1>
             <p className="md:w-2/3 md:mx-auto text-center text-lg">
-              Malaysia is a Southeast Asian country occupying parts of the Malay
+              Malaysia is a Southeast Asian country occupying parts of the Malaooo
               Peninsula and the island of Borneo.It's known for its beaches,
               rainforests and mix of Malay
             </p>
