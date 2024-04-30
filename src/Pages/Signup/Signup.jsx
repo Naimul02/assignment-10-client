@@ -9,7 +9,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const auth = getAuth(app);
 const Signup = () => {
-  const { createUser, signInWithGoogle, signInWithGithub } =
+  const { createUser, signInWithGoogle, signInWithGithub, setReload } =
     useContext(AuthContext);
 
   const handleGoogle = () => {
@@ -60,6 +60,7 @@ const Signup = () => {
         })
           .then(() => {
             toast.success("user created successful");
+            setReload(true);
           })
           .catch(() => {});
       })
